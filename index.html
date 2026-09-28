@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nirjhor™ — Officially Unofficial</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0b0d12;color:#f5f7fb}
+.wrap{max-width:900px;margin:auto;padding:28px 18px 50px}
+.hero,.card{border:1px solid #252a36;background:#131722;border-radius:24px}
+.hero{text-align:center;padding:42px 22px}
+.logo{font-size:64px}
+h1{font-size:clamp(38px,8vw,72px);margin:8px 0;font-weight:900}
+.muted{color:#aab1c2}
+button{border:0;border-radius:999px;padding:13px 22px;font-size:16px;font-weight:800;cursor:pointer;background:#f5f7fb;color:#0b0d12;margin-top:12px}
+button:hover{transform:translateY(-1px)}
+.status{min-height:24px;margin-top:14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
+.card{padding:22px}
+.card h2{margin-top:0}
+.meter{height:10px;background:#252a36;border-radius:20px;overflow:hidden;margin:14px 0 7px}
+.fill{height:100%;border-radius:20px;background:#f5f7fb}
+.notice{text-align:center;margin-top:16px}
+footer{text-align:center;color:#737b8e;margin-top:25px;font-size:13px}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.logo{font-size:52px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+  <div class="logo">😎🫡</div>
+  <h1>NIRJHOR™</h1>
+  <p class="muted">Officially unofficial. Professionally unserious.</p>
+  <button id="chaos">ACTIVATE CHAOS</button>
+  <p id="status" class="status muted">System status: suspiciously normal.</p>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <h2>🎓 Student Mode</h2>
+    <p class="muted">Homework detected.</p>
+    <div class="meter"><div class="fill" style="width:87%"></div></div>
+    <small>Motivation: 87%*</small>
+  </article>
+
+  <article class="card">
+    <h2>🍿 Anime Mode</h2>
+    <p class="muted">“Just two episodes.”</p>
+    <div class="meter"><div class="fill" style="width:99%"></div></div>
+    <small>Episode creep: 99%</small>
+  </article>
+
+  <article class="card">
+    <h2>🏃 Main Character</h2>
+    <p class="muted">Running arc unlocked.</p>
+    <div class="meter"><div class="fill" style="width:73%"></div></div>
+    <small>Drama: unnecessary</small>
+  </article>
+
+  <article class="card">
+    <h2>💀 Life Strategy</h2>
+    <p class="muted">Make a plan → ignore plan → make better plan.</p>
+    <div class="meter"><div class="fill" style="width:100%"></div></div>
+    <small>Consistency: questionable</small>
+  </article>
+</section>
+
+<section class="card notice">
+  <h2>⚠️ Important Notice</h2>
+  <p class="muted">This website has absolutely no qualifications, certifications, or useful purpose.</p>
+  <p id="quote">“Failure is a pillar of success.”</p>
+</section>
+
+<footer>© 2026 Nirjhor™ — Built for absolutely no reason.</footer>
+</main>
+
+<script>
+const statuses = [
+  "System status: chaos activated.",
+  "System status: homework mysteriously disappeared.",
+  "System status: anime has taken control.",
+  "System status: bro is cooking.",
+  "System status: absolutely no productivity detected."
+];
+const quotes = [
+  "“Bro is building the pillars.”",
+  "“Two episodes. Trust me.”",
+  "“Tomorrow I’ll start.”",
+  "“One more episode.”"
+];
+let n = 0;
+document.getElementById("chaos").addEventListener("click", () => {
+  n = (n + 1) % statuses.length;
+  document.getElementById("status").textContent = statuses[n];
+  document.getElementById("quote").textContent = quotes[n % quotes.length];
+});
+</script>
+</body>
+</html>
